@@ -7,7 +7,7 @@ let utils = require('../utils/utils.js')
  * @param {*} res 
  */
 exports.showIndex = function(req, res) {
-  let albums = utils.getDirectoryeNames('../models')
+  let albums = utils.getDirectoryeNames('../album')
   res.render('index', {
     albums
   })
@@ -21,8 +21,8 @@ exports.showIndex = function(req, res) {
  * @param {*} next 
  */
 exports.showAlbum = function (req, res, next) {
-  let albums = utils.getDirectoryeNames('../models')
-  let picArray = utils.getFilesNames(`../models/${req.params.albumName}`)
+  let albums = utils.getDirectoryeNames('../album')
+  let picArray = utils.getFilesNames(`../album/${req.params.albumName}`)
   if (!utils.isInArray(req.params.albumName, albums)) {
     console.log(1)
     next()

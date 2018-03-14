@@ -3,6 +3,7 @@ let router = require('./router')
 
 let app = express()
 
+app.use(express.static('./album'))
 app.use(express.static('./public'))
 app.set('view engine', 'ejs')
 
